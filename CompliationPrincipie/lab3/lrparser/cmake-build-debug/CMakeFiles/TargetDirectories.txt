@@ -1,0 +1,3 @@
+C:/Users/59376/Desktop/lab3/lrparser/cmake-build-debug/CMakeFiles/lrparser.dir
+C:/Users/59376/Desktop/lab3/lrparser/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/59376/Desktop/lab3/lrparser/cmake-build-debug/CMakeFiles/rebuild_cache.dir

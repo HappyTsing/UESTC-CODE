@@ -1,0 +1,22 @@
+void TestFunction();
+
+int main(){
+    int i = 0;
+    if(i<1){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    while(i>100){
+        i = i-1;
+     }
+    return -1;
+}
+
+void TestFunction(){
+    int i = 0;
+    print(i);
+    scan i ;
+    return;
+}

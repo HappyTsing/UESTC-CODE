@@ -1,0 +1,63 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             TT,CODE,READONLY
+    2 00000000                 ENTRY                        ;???????
+    3 00000000 E3A00014        MOV              R0,#20
+    4 00000004 E3A01001        MOV              R1,#1
+    5 00000008 E3A02002        MOV              R2,#2
+    6 0000000C E3A03003        MOV              R3,#3
+    7 00000010 E3A04004        MOV              R4,#4
+    8 00000014 E3A05005        MOV              R5,#5
+    9 00000018 EB000000        BL               ADD1        ;??BL?????ADD1,????
+                                                            ??????????LR?
+   10 0000001C EA000005        B                LOOP        ;?????????
+   11 00000020 E0500001 
+                       ADD1    SUBS             R0,R0,R1
+   12 00000024 E0D00002        SBCS             R0,R0,R2
+   13 00000028 E0D00003        SBCS             R0,R0,R3
+   14 0000002C E0D00004        SBCS             R0,R0,R4
+   15 00000030 E0D00005        SBCS             R0,R0,R5
+   16 00000034 E12FFF1E        BX               LR          ;??BX??????,bit0??0
+                                                            ,??????ARM??
+   17 00000038 E1A00000 
+                       LOOP    MOV              R0,R0
+   18 0000003C                 END
+Command Line: --debug --xref --cpu=ARM920T --apcs=interwork --depend=.\lab2-1.d
+ -o.\lab2-1.o -ID:\KeilV4\ARM\RV31\INC -ID:\KeilV4\ARM\CMSIS\Include -ID:\KeilV
+4\ARM\Inc\Samsung --list=.\lab2-1.lst lab2-1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADD1 00000020
+
+Symbol: ADD1
+   Definitions
+      At line 11 in file lab2-1.s
+   Uses
+      At line 9 in file lab2-1.s
+Comment: ADD1 used once
+LOOP 00000038
+
+Symbol: LOOP
+   Definitions
+      At line 17 in file lab2-1.s
+   Uses
+      At line 10 in file lab2-1.s
+Comment: LOOP used once
+TT 00000000
+
+Symbol: TT
+   Definitions
+      At line 1 in file lab2-1.s
+   Uses
+      None
+Comment: TT unused
+3 symbols
+333 symbols in table

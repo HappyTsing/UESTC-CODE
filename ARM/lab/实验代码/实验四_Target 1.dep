@@ -1,0 +1,2 @@
+Dependencies for Project 'สตั้หฤ', Target 'Target 1': (DO NOT MODIFY !)
+F (.\lab4.s)(0x5EDA4F2B)(--cpu ARM920T -g --apcs=interwork -I D:\KeilV4\ARM\RV31\INC-I D:\KeilV4\ARM\CMSIS\Include-I D:\KeilV4\ARM\Inc\Samsung--list .\lab4.lst --xref -o .\lab4.o --depend .\lab4.d)

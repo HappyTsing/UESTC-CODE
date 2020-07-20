@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             SORT,CODE,READONLY ;???????
+    2 00000000                 ENTRY
+    3 00000000 E3A00007        MOV              R0,#7       ;??????,???
+    4 00000004 E3A02101        LDR              R2,=0x40000000 ;R2??????????
+    5 00000008 E2401001        SUB              R1,R0,#1
+    6 0000000C E3A04004        MOV              R4,#4
+    7 00000010 E0232491        MLA              R3,R1,R4,R2 ;R3?????????? R3=R1
+                                                            *R4+R2
+    8 00000014 E2434004        SUB              R4,R3,#4    ;R4???????????????
+    9 00000018 E1A05002 
+                       LOOP1   MOV              R5,R2       ;R5?????????
+   10 0000001C E5956000 
+                       LOOP2   LDR              R6,[R5]
+   11 00000020 E5957004        LDR              R7,[R5,#4]
+   12 00000024 E1560007        CMP              R6,R7       ;????,??????
+   13 00000028 85856004        STRHI            R6,[R5,#4]  ;?R6????R5+4????,??
+                                                            R6>R7
+   14 0000002C 85857000        STRHI            R7,[R5]
+   15 00000030 E2855004        ADD              R5,R5,#4    ;???????
+   16 00000034 E1550004        CMP              R5,R4       ;???????
+   17 00000038 9AFFFFF7        BLS              LOOP2
+   18 0000003C E2433004        SUB              R3,R3,#4    ;???????
+   19 00000040 E2444004        SUB              R4,R4,#4
+   20 00000044 E1520003        CMP              R2,R3       ;???????
+   21 00000048 9AFFFFF2        BLS              LOOP1
+   22 0000004C E3A02101        LDR              R2,=0x40000000
+   23 00000050 E1A000A0        MOV              R0,R0,LSR #1
+   24 00000054 E3A04004        MOV              R4,#4
+   25 00000058 E0232490        MLA              R3,R0,R4,R2
+   26 0000005C E5931000        LDR              R1,[R3]     ;??????????R1
+   27 00000060 E3A00064        MOV              R0,#100
+   28 00000064                 END
+Command Line: --debug --xref --cpu=ARM920T --apcs=interwork --depend=.\lab3-1.d
+ -o.\lab3-1.o -ID:\KeilV4\ARM\RV31\INC -ID:\KeilV4\ARM\CMSIS\Include -ID:\KeilV
+4\ARM\Inc\Samsung --list=.\lab3-1.lst lab3-1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LOOP1 00000018
+
+Symbol: LOOP1
+   Definitions
+      At line 9 in file lab3-1.s
+   Uses
+      At line 21 in file lab3-1.s
+Comment: LOOP1 used once
+LOOP2 0000001C
+
+Symbol: LOOP2
+   Definitions
+      At line 10 in file lab3-1.s
+   Uses
+      At line 17 in file lab3-1.s
+Comment: LOOP2 used once
+SORT 00000000
+
+Symbol: SORT
+   Definitions
+      At line 1 in file lab3-1.s
+   Uses
+      None
+Comment: SORT unused
+3 symbols
+333 symbols in table

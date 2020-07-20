@@ -1,0 +1,6 @@
+ AREA LAB1_TEST,CODE,READONLY
+       ENTRY
+	   MOV R1,#3
+	   MSR CPSR,R1
+
+       END

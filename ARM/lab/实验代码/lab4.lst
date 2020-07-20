@@ -1,0 +1,124 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Init, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E59F008C        LDR              R0,=0521632478
+    4 00000004 E3A01101        LDR              R1,=0X40000000
+    5 00000008 E3A02141        LDR              R2,=0X40000010
+    6 0000000C E3A0700A        MOV              R7,#10
+    7 00000010 EB000004 
+                       M1      BL               DIV10
+    8 00000014 E4C15001        STRB             R5,[R1],#1
+    9 00000018 E1A00006        MOV              R0,R6
+   10 0000001C E2577001        SUBS             R7,R7,#1
+   11 00000020 1AFFFFFA        BNE              M1
+   12 00000024 EA00000D        B                TEND
+   13 00000028 E1A03000 
+                       DIV10   MOV              R3,R0
+   14 0000002C E3A04020        MOV              R4,#32
+   15 00000030 E3A05000        MOV              R5,#0
+   16 00000034 E3A06000        MOV              R6,#0
+   17 00000038 E1A06086 
+                       DIV2    MOV              R6,R6,LSL #1
+   18 0000003C E1A05085        MOV              R5,R5,LSL #1
+   19 00000040 E1B03083        MOVS             R3,R3, LSL #1
+   20 00000044 E2A55000        ADC              R5,R5,#0
+   21 00000048 E255500A        SUBS             R5,R5,#10
+   22 0000004C 22866001        ADDCS            R6,R6,#1
+   23 00000050 3285500A        ADDCC            R5,R5,#10
+   24 00000054         
+   25 00000054 E2544001        SUBS             R4,R4,#1
+   26 00000058 1AFFFFF6        BNE              DIV2
+   27 0000005C E12FFF1E        BX               LR
+   28 00000060 E59F3030 
+                       TEND    LDR              R3,=BCDCODE
+   29 00000064 E3A04101        LDR              R4,=0X40000000
+   30 00000068 E3A05141        LDR              R5,=0X40000010
+   31 0000006C E3A0600A        MOV              R6,#10
+   32 00000070 E4D47001 
+                       TEND1   LDRB             R7,[R4],#1
+   33 00000074 E7D38007        LDRB             R8,[R3,R7]
+   34 00000078 E4C58001        STRB             R8,[R5],#1
+   35 0000007C E2566001        SUBS             R6,R6,#1
+   36 00000080 1AFFFFFA        BNE              TEND1
+   37 00000084 E1A00000        MOV              R0,R0
+   38 00000088         
+   39 00000088 3F 06 5B 
+              4F 66 6D 
+              7D 7F 6F 
+              00 00 00 BCDCODE DCB              0X3F,0X06,0X5B,0X4F,0X66,0X6D,0
+X7D,0X7F,0X6F,0X00,0X00,0X00
+   40 00000094                 END
+              1F177ADE 
+              00000000 
+Command Line: --debug --xref --cpu=ARM920T --apcs=interwork --depend=.\lab4.d -
+o.\lab4.o -ID:\KeilV4\ARM\RV31\INC -ID:\KeilV4\ARM\CMSIS\Include -ID:\KeilV4\AR
+M\Inc\Samsung --list=.\lab4.lst lab4.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BCDCODE 00000088
+
+Symbol: BCDCODE
+   Definitions
+      At line 39 in file lab4.s
+   Uses
+      At line 28 in file lab4.s
+Comment: BCDCODE used once
+DIV10 00000028
+
+Symbol: DIV10
+   Definitions
+      At line 13 in file lab4.s
+   Uses
+      At line 7 in file lab4.s
+Comment: DIV10 used once
+DIV2 00000038
+
+Symbol: DIV2
+   Definitions
+      At line 17 in file lab4.s
+   Uses
+      At line 26 in file lab4.s
+Comment: DIV2 used once
+Init 00000000
+
+Symbol: Init
+   Definitions
+      At line 1 in file lab4.s
+   Uses
+      None
+Comment: Init unused
+M1 00000010
+
+Symbol: M1
+   Definitions
+      At line 7 in file lab4.s
+   Uses
+      At line 11 in file lab4.s
+Comment: M1 used once
+TEND 00000060
+
+Symbol: TEND
+   Definitions
+      At line 28 in file lab4.s
+   Uses
+      At line 12 in file lab4.s
+Comment: TEND used once
+TEND1 00000070
+
+Symbol: TEND1
+   Definitions
+      At line 32 in file lab4.s
+   Uses
+      At line 36 in file lab4.s
+Comment: TEND1 used once
+7 symbols
+339 symbols in table

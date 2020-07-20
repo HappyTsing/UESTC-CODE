@@ -1,0 +1,10 @@
+int count(*L)
+{
+	
+	if(L==NULL)
+	return 1;
+	else
+	{
+		return (count(L->next)+1);
+	}
+ } 

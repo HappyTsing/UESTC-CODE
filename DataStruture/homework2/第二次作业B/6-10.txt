@@ -1,0 +1,19 @@
+typedef struct 
+{
+	int r;
+	int c;
+    int d;
+}TupNode;
+typedef struct
+{ int rows;
+  int cols;
+  int nums;
+  TupNode data[maxsize]
+}TSMatrix;
+TSMatrix t;
+//因为只有方阵有对角线，所以rows=cols
+int sum
+for(i=0;i<nums;i++)
+{if(t.data[i].r=t.data[i].c)
+sum+=t.data[i].d;}
+//该循环后即可求出对角线之和

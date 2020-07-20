@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/59376/Desktop/a/ast.h
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+stdbool.h
+-
+
+C:/Users/59376/Desktop/a/lrparser.tab.h
+
+C:/Users/59376/Desktop/a/main.c
+lrparser.tab.h
+C:/Users/59376/Desktop/a/lrparser.tab.h
+ast.h
+C:/Users/59376/Desktop/a/ast.h
+
