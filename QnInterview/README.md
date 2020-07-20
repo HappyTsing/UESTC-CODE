@@ -1,6 +1,3 @@
-# 代码github链接
-
-<https://github.com/HappyTsing/MySpider2>
 
 - 基于scrapy框架实现爬虫
 
