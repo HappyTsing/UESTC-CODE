@@ -1,15 +1,11 @@
-# 代码github链接
-
-<https://github.com/HappyTsing/MySpider2>
-
 - 基于scrapy框架实现爬虫
 
-![image-20200710135453357](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135453.png)
+![image-20200710135453357](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121743.png)
 
 - items.py：构建存储的字典结构
 - pipelines.py：实现与数据库相连接，并将爬取的数据传送给数据库，此处为MySQL
 
-![1570410193554](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135252.png)
+![1570410193554](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121748.png)
 
 - spider.py：实现url定位、翻页、爬取内容保存至item，再yield给pipelines.py
 
@@ -17,13 +13,13 @@
 
 ### 浏览器的工作原理
 
-![1570411251228](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135246.png)
+![1570411251228](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121752.png)
 
 ### 爬虫工作机制
 
 > 爬虫的原理即位模仿浏览器的工作原理直接实现数据的爬取
 
-![1570412399038](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135244.png)
+![1570412399038](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121759.png)
 
 ### 构建MySQL数据库
 
@@ -33,7 +29,7 @@
 mysql -u root -p
 ```
 
-![1570330040816](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135239.png)
+![1570330040816](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121828.png)
 
 2. 查看已有数据库，并构建一个名为test1的数据库
 
@@ -42,7 +38,7 @@ show databases；
 CREATE DATABASE test1；
 ```
 
-![1570330166168](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135234.png)
+![1570330166168](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121807.png)
 
 3. 在test1中创建1个table，分别取名为spider，用于存放爬取的学生科和教务科的数据，具有三个属性，title存储标题，reply存储内容
 
@@ -52,7 +48,7 @@ show tabel;
 CREATE TABLE spider (reply text NULL,title VARCHAR(255) NOT NULL);
 ```
 
-![1570412843511](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710135207.png)
+![1570412843511](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121813.png)
 
 ### 基于scrapy实现爬虫
 

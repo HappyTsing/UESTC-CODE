@@ -40,7 +40,7 @@ link_number=re.findall(r'\d+',href_content)[0]
 
 > 这一步无法完成，虽然这些url在浏览器的开发者工具中可以查看到，但是在使用bs4解析后得到的html源码会缺失这些图片的url，猜测可能是’lxml‘不稳定，随后尝试更改‘lxml’为‘html5lib’与‘html.parse'，仍旧失败。期间也使用过re.request和urllib库，都以失败告终。
 
-![1569739889225](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152723.png)
+![1569739889225](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121934.png)
 
 #### 尝试2
 
@@ -57,9 +57,9 @@ link_number=re.findall(r'\d+',href_content)[0]
 >
 > 每个页面有数个page，每个page中存在多张图片
 
-![1569737705192](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152742.png)
+![1569737705192](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121945.png)
 
-![1569737727599](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152748.png)
+![1569737727599](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121951.png)
 
 3. 通过分析单张图片网址的源代码，发现图片的url与第二步提取出来的url并不一样，经过比较，唯一的不同之处便是最后的图片大小：
 
@@ -113,9 +113,9 @@ link_number=re.findall(r'\d+',href_content)[0]
 
 ### 爬取结果
 
-![](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152756.png)
+![](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722121959.png)
 
-![1569739454072](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152805.png)
+![1569739454072](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122020.png)
 
 ![1569739479290](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152815.png)
 
@@ -199,9 +199,6 @@ for item in data: #遍历data，在对应角色得网站里，爬取图片，下
 
 ```
 
-### github链接
-
-<https://github.com/HappyTsing/SpiderCoser>
 
 ## 爬取信软官方，使用scrapy，保存数据至数据库
 
@@ -222,7 +219,7 @@ for item in data: #遍历data，在对应角色得网站里，爬取图片，下
 mysql -u root -p
 ```
 
-![1570330040816](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152331.png)
+![1570330040816](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122030.png)
 
 2. 查看已有数据库，并构建一个名为test1的数据库
 
@@ -231,7 +228,7 @@ show databases；
 CREATE DATABASE test1；
 ```
 
-![1570330166168](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152341.png)
+![1570330166168](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122036.png)
 
 3. 在test1中创建两个table，分别取名为student和academic，用于存放爬取的学生科和教务科的数据，具有三个属性，time存储时间，title存储内容，id表示标号，属于key、auto_increment
 
@@ -242,7 +239,7 @@ CREATE TABLE student (time INT(15) NOT NULL,title VARCHAR(255) NOT NULL,id INT(4
 CREATE TABLE academinc (time INT(15) NOT NULL,title VARCHAR(255) NOT NULL,id INT(4) NOT NULL AUTO_INCREMENT KEY);
 ```
 
-![1570331008983](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152346.png)
+![1570331008983](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122044.png)
 
 ### 尝试爬取
 
@@ -328,10 +325,4 @@ custom_settings = {
 
 ### 爬取结果
 
-![1570338423791](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152436.png)
-
-### github链接
-
-<https://github.com/HappyTsing/MySpider>
-
-> 内有整个project的代码 
+![1570338423791](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122055.png)
