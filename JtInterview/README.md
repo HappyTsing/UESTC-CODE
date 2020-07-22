@@ -117,8 +117,6 @@ link_number=re.findall(r'\d+',href_content)[0]
 
 ![1569739454072](https://github.com/WlqFigureBed/FigureBed-one/raw/master/img/20200722122020.png)
 
-![1569739479290](https://github.com/HappyTsing/Figure-bed/raw/master/img/20200710152815.png)
-
 ### 完整代码和注释
 
 ```python
