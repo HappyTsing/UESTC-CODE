@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import os
+
 def download_image(image_url,image_path,image_name):   #运行一次，下载完一张图片
     print('download %s%s'%(image_path,image_name)) #显示打印进度
     headers = {
@@ -50,15 +51,17 @@ def get_cos_images(link_number,image_path):  #运行一次，下载完一个cos�
         next_page=get_cos_images_page(link_number, image_path, page)
         page+=1;
 
-
-
-
-
 url = 'https://worldcosplay.net/member/Itsuki-chan/characters'
+
 headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+        # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36'
+
     }
+# session =requests.Session()
+# session.trust_env=False   #设置不使用代理！
 response = requests.get(url=url, headers=headers)#模拟浏览器发送请求
+
 page_html = response.text
 soup = BeautifulSoup(page_html,'lxml')
 data=soup.select('body #content .photo-list a')   #标签不变，id加#，类名加.得到固定区域的HTML数据
@@ -75,4 +78,3 @@ for item in data: #遍历data，在对应角色得网站里，爬取图片，下
         os.mkdir('images\\%s'%title)    #创建每个cos角色的文件夹
     image_path='images\\%s\\'%title     #最后的"\\"是为了给图片名留下位置，此处写了在函数download_image中不用写，直接加上"图片名"即可
     get_cos_images(link_number,image_path)  #传递函数参数，获得所有照片。
-
